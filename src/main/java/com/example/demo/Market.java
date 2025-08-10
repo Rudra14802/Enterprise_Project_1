@@ -1,35 +1,25 @@
-//package com.example.demo;
-//
-//import org.springframework.data.annotation.Id;
-//import org.springframework.data.mongodb.core.mapping.Document;
-//import lombok.*;
-//
-//@Data
-//@Builder
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Document
-//public class Market {
-//    @Id
-//    private String marketID;
-//    private String stockSymbol;
-//    private double price;
-//    private int availableQty;
-//    private String listedExchangeName;
-//}
-
-
 package com.example.demo;
+
+import jakarta.validation.constraints.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Market {
+
     @Id
     private String marketID;
+
+    @NotBlank(message = "Stock symbol is required")
     private String stockSymbol;
+
+    @Positive(message = "Price must be a positive value")
     private double price;
+
+    @Min(value = 0, message = "Available quantity must be zero or more")
     private int availableQty;
+
+    @NotBlank(message = "Exchange name is required")
     private String listedExchangeName;
 
     public Market() {}

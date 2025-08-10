@@ -1,0 +1,16 @@
+[
+  {
+    "marketID": "MKT001",
+    "stockSymbol": "AAPL",
+    "price": 185.5,
+    "availableQty": 1500,
+    "listedExchangeName": "NASDAQ"
+  },
+  {
+    "marketID": "MKT002",
+    "stockSymbol": "GOOGL",
+    "price": 2729.0,
+    "availableQty": 800,
+    "listedExchangeName": "NASDAQ"
+  }
+]
